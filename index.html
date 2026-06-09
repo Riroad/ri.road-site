@@ -455,7 +455,7 @@
     <h2 class="serif">その道を、<span class="gold">ともに。</span></h2>
     <p>まず話しましょう。相談は無料です。</p>
 
-    <form class="cf-form" action="https://formsubmit.co/ri.road2026@gmail.com" method="POST">
+    <form class="cf-form" id="cf-form" action="https://formsubmit.co/65c57518974c92a3ac552e8e91f6f7e2" method="POST">
       <input type="hidden" name="_subject" value="Ri.road お問い合わせ">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -481,6 +481,10 @@
       </div>
       <button type="submit" class="btn-fill cf-submit">送信する</button>
     </form>
+    <div id="cf-thanks" style="display:none;text-align:center;padding:60px 0;">
+      <p style="font-size:1.4em;letter-spacing:.08em;color:#efe9dc;">お問い合わせありがとうございます。</p>
+      <p style="margin-top:1em;color:#aaa;letter-spacing:.05em;">内容を確認のうえ、折り返しご連絡いたします。</p>
+    </div>
 
     <div class="cf-notes">
       <p class="req-note">＊は入力必須項目です。</p>
@@ -536,6 +540,20 @@
     es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
   },{threshold:.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // contact form AJAX
+  const cfForm=document.getElementById('cf-form');
+  cfForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    fetch(cfForm.action,{method:'POST',body:new FormData(cfForm),headers:{'Accept':'application/json'}})
+    .then(r=>{
+      if(r.ok){
+        cfForm.style.display='none';
+        document.getElementById('cf-thanks').style.display='block';
+      } else { cfForm.submit(); }
+    })
+    .catch(()=>cfForm.submit());
+  });
 
 </script>
 </body>
