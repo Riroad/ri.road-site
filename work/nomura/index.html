@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>サンプル建設株式会社｜○○県○○市の総合建設業（創業50年）</title>
+<meta name="description" content="○○県○○市の総合建設業 サンプル建設株式会社（創業50年・社員20名）。スポーツ施設・工場・道路・介護施設・住宅まで、生活に密着した建設で街づくりを支えます。元請け工事・採用のお問い合わせはフリーダイヤル0120-000-000まで。" />
+<meta name="keywords" content="総合建設業,建築,土木,リフォーム,新築,サンプルサイト" />
+<style>
+  :root{
+    --navy-900:#0a1f44;
+    --navy-800:#13284f;
+    --navy-700:#1c3563;
+    --navy-500:#2c4a82;
+    --navy-100:#e8ecf4;
+    --gold-600:#b88a36;
+    --gold-500:#c89b48;
+    --gold-400:#d4ad5e;
+    --gold-100:#f6efde;
+    --gray-900:#161c2d;
+    --gray-700:#4a5266;
+    --gray-500:#7a8290;
+    --gray-200:#e4e7ee;
+    --gray-100:#f6f7fa;
+    --white:#ffffff;
+    --accent:#c89b48;
+    --shadow:0 6px 24px rgba(10,31,68,.10);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;
+    color:var(--gray-900);
+    line-height:1.75;
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--navy-800);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--gray-200);
+  }
+  .nav{
+    max-width:1180px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{
+    display:flex;align-items:center;text-decoration:none;
+  }
+  .logo-img{
+    height:48px;width:auto;display:block;
+  }
+  .logo-text{
+    font-family:Georgia,"Hiragino Mincho ProN","Yu Mincho",serif;
+    display:flex;align-items:baseline;gap:5px;
+    color:var(--gray-700);font-weight:700;font-size:14px;
+  }
+  .logo-text em{font-style:normal;font-size:22px;font-weight:700;color:var(--navy-900);letter-spacing:.03em}
+  /* Footer brand */
+  .footer-brand{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;background:#fff;border-radius:10px;
+    box-shadow:0 4px 16px rgba(0,0,0,.15);
+    width:fit-content;
+  }
+  .footer-logo-img{
+    height:46px;width:auto;display:block;flex-shrink:0;
+  }
+  .footer-brand-text{
+    font-family:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif;
+    color:var(--navy-900);font-weight:700;font-size:16px;
+    display:flex;align-items:baseline;gap:5px;
+  }
+  .footer-brand-text em{font-style:normal;font-size:22px;font-weight:700;letter-spacing:.04em}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--gray-700);font-size:14px;font-weight:600}
+  .nav-links a:hover{color:var(--navy-800);text-decoration:none}
+  .nav-cta{
+    background:var(--navy-800);color:#fff;
+    padding:10px 18px;border-radius:999px;font-size:14px;font-weight:700;
+  }
+  .nav-cta:hover{background:var(--navy-900);text-decoration:none}
+  .hamburger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--gray-900);margin:5px 0;transition:.2s}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(44,74,130,.18), transparent 60%),
+      radial-gradient(800px 500px at -10% 100%, rgba(20,99,194,.12), transparent 60%),
+      linear-gradient(180deg,#f7fbff 0%, #ffffff 100%);
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1180px;margin:0 auto;padding:96px 24px 88px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;background:var(--navy-100);color:var(--navy-900);
+    font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,46px);line-height:1.3;font-weight:900;
+    color:var(--gray-900);margin-bottom:20px;letter-spacing:.01em;
+  }
+  .hero h1 .accent{color:var(--gold-600)}
+  .hero p.lead{
+    font-size:17px;color:var(--gray-700);margin-bottom:32px;max-width:560px;
+  }
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;
+    transition:transform .15s, box-shadow .15s, background .15s;
+  }
+  .btn-primary{background:var(--navy-800);color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{background:var(--navy-900);transform:translateY(-2px);text-decoration:none}
+  .btn-outline{background:#fff;color:var(--navy-800);border:2px solid var(--navy-800)}
+  .btn-outline:hover{background:var(--navy-100);text-decoration:none}
+
+  .hero-visual{
+    position:relative;
+    background:linear-gradient(135deg,var(--navy-700),var(--navy-900));
+    border-radius:var(--radius);box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .hero-visual .hero-img{
+    display:block;width:100%;height:auto;
+  }
+  .hero-visual::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,31,68,.05) 30%, rgba(10,31,68,.35) 100%);
+    pointer-events:none;
+  }
+  .hero-visual svg{display:none}
+  .hero-badge{
+    position:absolute;bottom:13px;left:24px;right:24px;z-index:2;
+    background:rgba(255,255,255,.55);border-radius:12px;padding:18px 20px;
+    backdrop-filter:blur(8px);
+  }
+  .hero-badge strong{color:var(--navy-900);font-size:18px;opacity:.8}
+  .hero-badge p{color:var(--gray-700);font-size:13px;margin-top:4px;opacity:.75}
+
+  /* Sections */
+  section{padding:96px 24px}
+  .container{max-width:1180px;margin:0 auto}
+  .section-head{text-align:center;margin-bottom:56px}
+  .section-tag{
+    font-size:13px;color:var(--gold-600);font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .section-head h2{
+    font-size:clamp(24px,3vw,34px);font-weight:900;color:var(--gray-900);margin-top:10px;
+  }
+  .section-head p{color:var(--gray-700);margin-top:14px;max-width:680px;margin-left:auto;margin-right:auto}
+
+  /* Target Split */
+  .target-split{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;
+    max-width:900px;margin:0 auto;
+  }
+  .target-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;padding:40px 36px;
+  }
+  .target-client{border-color:rgba(255,255,255,.18)}
+  .target-recruit{background:rgba(200,155,72,.10);border-color:rgba(200,155,72,.4)}
+  .target-label{
+    font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-400);
+    margin-bottom:12px;
+  }
+  .target-card h3{
+    font-size:21px;font-weight:900;color:#fff;margin-bottom:14px;line-height:1.4;
+  }
+  .target-card p{color:#a8b8cc;font-size:13.5px;line-height:1.85;margin-bottom:24px}
+  .target-links{display:flex;flex-direction:column;gap:10px}
+  .target-links a{color:#c8d8e8;font-size:13.5px;font-weight:600;text-decoration:none}
+  .target-links a:hover{color:#fff;text-decoration:none}
+  .target-cta-btn{
+    display:inline-block;margin-top:8px;padding:13px 22px;border-radius:999px;
+    background:rgba(255,255,255,.12);color:#fff !important;font-weight:800;
+    font-size:14px;text-align:center;border:1px solid rgba(255,255,255,.25);
+    transition:background .2s;
+  }
+  .target-cta-btn:hover{background:rgba(255,255,255,.22) !important}
+  .target-cta-gold{
+    background:var(--gold-500) !important;color:var(--navy-900) !important;
+    border-color:transparent !important;
+  }
+  .target-cta-gold:hover{background:var(--gold-400) !important}
+  .target-divider{
+    display:flex;align-items:center;justify-content:center;
+    padding:0 24px;
+  }
+  .target-divider span{
+    color:#3a5070;font-size:13px;font-weight:700;letter-spacing:.05em;
+    writing-mode:vertical-rl;
+  }
+  @media(max-width:760px){
+    .target-split{grid-template-columns:1fr;gap:16px}
+    .target-divider{writing-mode:horizontal-tb;padding:4px 0}
+    .target-divider span{writing-mode:horizontal-tb}
+    .target-card{padding:28px 24px}
+  }
+
+  /* Philosophy */
+  .philosophy{background:var(--gray-100)}
+  .phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .phil-card{
+    background:#fff;padding:32px 28px;border-radius:var(--radius);box-shadow:var(--shadow);
+    border-top:4px solid var(--gold-500);transition:transform .2s;
+  }
+  .phil-card:hover{transform:translateY(-4px)}
+  .phil-card .icon{
+    width:52px;height:52px;border-radius:12px;background:var(--navy-100);
+    display:grid;place-items:center;color:var(--navy-800);margin-bottom:18px;
+  }
+  .phil-card h3{font-size:18px;font-weight:800;margin-bottom:10px;color:var(--gray-900)}
+  .phil-card p{color:var(--gray-700);font-size:14.5px}
+
+  /* President message */
+  .president{background:#fff}
+  .president-inner{
+    display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center;
+    background:var(--gray-100);border-radius:var(--radius);padding:48px;
+    box-shadow:var(--shadow);
+  }
+  .president-photo{
+    width:100%;aspect-ratio:4/5;border-radius:12px;overflow:hidden;
+    background-image:url('./photos/president.jpg');
+    background-size:cover;background-position:center center;background-color:#f5f5f5;
+    border:3px solid var(--gold-500);position:relative;
+  }
+  .president-photo svg, .president-photo span{display:none}
+  .president-body .quote{
+    font-size:24px;font-weight:800;color:var(--navy-900);line-height:1.6;
+    margin-bottom:20px;letter-spacing:.01em;
+    font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;
+  }
+  .president-body .quote::before{
+    content:"";display:block;width:48px;height:3px;
+    background:var(--gold-500);margin-bottom:18px;
+  }
+  .president-body p{color:var(--gray-700);font-size:15px;margin-bottom:14px;line-height:1.9}
+  .president-signature{
+    margin-top:24px;padding-top:18px;border-top:1px solid var(--gray-200);
+    font-size:14px;color:var(--gray-700);
+  }
+  .president-signature strong{
+    display:block;font-size:18px;color:var(--navy-900);margin-top:4px;
+    font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;
+  }
+
+  /* Customer voices */
+  .voices{background:linear-gradient(180deg,#fff,var(--gray-100))}
+  .voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .voice-card{
+    background:#fff;border-radius:var(--radius);padding:32px 28px;
+    box-shadow:var(--shadow);position:relative;
+    border-top:4px solid var(--gold-500);
+  }
+  .voice-card::before{
+    content:"\201C";position:absolute;top:-12px;left:24px;
+    font-size:80px;color:var(--gold-500);font-family:Georgia,serif;
+    line-height:1;font-weight:900;
+  }
+  .voice-quote{
+    font-size:15px;color:var(--gray-700);line-height:1.9;
+    margin-top:18px;margin-bottom:22px;min-height:120px;
+  }
+  .voice-meta{
+    display:flex;align-items:center;gap:14px;
+    padding-top:18px;border-top:1px solid var(--gray-200);
+  }
+  .voice-avatar{
+    width:48px;height:48px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(135deg,var(--navy-700),var(--navy-900));
+    display:grid;place-items:center;color:var(--gold-400);
+    font-weight:900;font-size:18px;font-family:Georgia,serif;
+  }
+  .voice-name{font-weight:800;color:var(--navy-900);font-size:14px}
+  .voice-role{font-size:12.5px;color:var(--gray-500);margin-top:2px}
+
+  /* Staff */
+  .staff{background:#fff}
+  .staff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .staff-card{
+    background:#fff;border-radius:var(--radius);box-shadow:0 16px 22px -14px rgba(10,31,68,.22);
+    overflow:hidden;transition:transform .2s;
+  }
+  .staff-card:hover{transform:translateY(-4px)}
+  .staff-photo{
+    aspect-ratio:3/4;
+    background:linear-gradient(135deg,var(--navy-700),var(--navy-900));
+    display:grid;place-items:center;color:var(--gold-400);
+    text-align:center;padding:20px;position:relative;
+  }
+  .staff-photo svg{width:64px;height:64px;opacity:.55}
+  /* 社員写真 */
+  .has-photo{background-size:cover !important;background-position:center center}
+  .has-photo svg{display:none}
+  .has-photo::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(10,31,68,.55) 100%);
+    pointer-events:none;z-index:1;
+  }
+  .has-photo .role-tag{position:relative;z-index:2}
+  .sp1{background-image:url('./photos/staff-1.jpg');background-color:#fff;background-position:center center !important}
+  .sp2{background-image:url('./photos/staff-2.jpg');background-color:#cfe2f3}
+  .sp3{background-image:url('./photos/staff-3.jpg');background-color:#fff}
+  .sp4{background-image:url('./photos/staff-4.jpg');background-color:#fff}
+  .staff-photo .role-tag{
+    position:absolute;bottom:14px;left:14px;
+    background:var(--gold-500);color:var(--navy-900);
+    padding:5px 12px;border-radius:999px;font-size:11.5px;font-weight:800;
+  }
+  .staff-body{padding:20px 22px 24px}
+  .staff-name{
+    font-weight:800;color:var(--navy-900);font-size:16px;margin-bottom:4px;
+    font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;
+  }
+  .staff-years{font-size:12px;color:var(--gray-500);margin-bottom:14px}
+  .staff-quote{
+    font-size:13.5px;color:var(--gray-700);line-height:1.8;
+    padding-top:14px;border-top:1px solid var(--gray-200);
+  }
+
+  /* Gallery (施工実績) */
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .gallery-item{
+    border-radius:var(--radius);overflow:hidden;position:relative;
+    aspect-ratio:4/3;background:var(--navy-700);
+  }
+  .gallery-item img{
+    width:100%;height:100%;object-fit:cover;
+    display:block;transition:transform .35s;
+  }
+  .gallery-item:hover img{transform:scale(1.06)}
+  .gallery-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 45%,rgba(10,31,68,.82) 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:18px;
+  }
+  .gallery-tag{font-size:11px;font-weight:700;color:var(--gold-400);letter-spacing:.12em;margin-bottom:4px;text-transform:uppercase}
+  .gallery-title{font-size:15px;font-weight:800;color:#fff;line-height:1.4}
+  .gallery-meta{font-size:12px;color:rgba(255,255,255,.72);margin-top:5px}
+  @media(max-width:960px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.gallery-grid{grid-template-columns:1fr}}
+
+  /* Map */
+  .map-wrap{
+    margin-top:36px;border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .map-wrap iframe{display:block;width:100%;border:0}
+
+  /* Works */
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .work-card{
+    border-radius:var(--radius);overflow:hidden;background:#fff;
+    box-shadow:var(--shadow);transition:transform .2s;
+  }
+  .work-card:hover{transform:translateY(-4px)}
+  .work-thumb{
+    height:200px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;
+    position:relative;background-size:cover;background-position:center;
+  }
+  .work-thumb::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,31,68,.1) 0%,rgba(10,31,68,.75) 100%);
+  }
+  .work-thumb svg{display:none}
+  .work-thumb span{
+    position:absolute;bottom:18px;left:20px;z-index:1;
+    text-shadow:0 2px 12px rgba(0,0,0,.5);font-size:17px;
+  }
+  .w1{background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80')}
+  .w2{background-image:url('./photos/work-factory.png')}
+  .w3{background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80')}
+  .w4{background-image:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80')}
+  .w5{background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80')}
+  .w6{background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=600&q=80')}
+  .work-body{padding:20px 22px 24px}
+  .work-body .work-tag{
+    display:inline-block;font-size:11px;color:var(--gold-600);font-weight:700;
+    letter-spacing:.1em;margin-bottom:6px;
+  }
+  .work-body h4{font-size:16px;color:var(--gray-900);margin-bottom:8px;font-weight:800;line-height:1.45}
+  .work-body p{font-size:13.5px;color:var(--gray-700);line-height:1.7}
+  .work-body .work-meta{
+    margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-200);
+    font-size:12.5px;color:var(--gray-500);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+  }
+
+  /* Strengths (3K払拭) */
+  .strengths{
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.92),rgba(243,248,253,.95)),
+      url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=80') center/cover fixed;
+  }
+  .str-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .str-card{
+    background:#fff;border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden;
+  }
+  .str-card::before{
+    content:"";position:absolute;top:0;left:0;width:100%;height:6px;
+    background:linear-gradient(90deg,var(--gold-500),var(--navy-700));
+  }
+  .str-card .label{
+    display:inline-block;font-size:12px;font-weight:700;color:var(--navy-800);
+    background:var(--navy-100);padding:4px 10px;border-radius:999px;margin-bottom:14px;
+  }
+  .str-card h3{font-size:19px;font-weight:900;color:var(--gray-900);margin-bottom:10px}
+  .str-card p{color:var(--gray-700);font-size:14.5px}
+
+  /* Recruit */
+  .recruit{background:var(--gray-100)}
+  .recruit-message{
+    background:#fff;padding:48px;border-radius:var(--radius);box-shadow:var(--shadow);
+    margin-bottom:48px;
+  }
+  .recruit-message h3{
+    font-size:24px;font-weight:900;color:var(--navy-900);margin-bottom:18px;line-height:1.5;
+  }
+  .recruit-message p{color:var(--gray-700);font-size:15.5px;margin-bottom:14px}
+
+  .recruit-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px}
+  .recruit-block{background:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+  .recruit-block h4{
+    font-size:18px;font-weight:800;color:var(--navy-900);margin-bottom:18px;
+    padding-bottom:12px;border-bottom:2px solid var(--navy-100);
+  }
+  .recruit-block ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .recruit-block li{
+    display:flex;gap:12px;color:var(--gray-700);font-size:14.5px;
+  }
+  .recruit-block li::before{
+    content:"✓";color:var(--navy-800);font-weight:900;flex-shrink:0;
+  }
+
+  /* 待遇テーブル */
+  .conditions{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:48px}
+  .conditions table{width:100%;border-collapse:collapse}
+  .conditions th, .conditions td{
+    padding:18px 22px;text-align:left;font-size:14.5px;
+    border-bottom:1px solid var(--gray-200);
+  }
+  .conditions th{
+    background:var(--navy-100);color:var(--navy-900);font-weight:800;
+    width:200px;vertical-align:top;
+  }
+  .conditions tr:last-child th, .conditions tr:last-child td{border-bottom:none}
+
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+  .faq-item{
+    background:#fff;border-radius:12px;padding:22px 26px;box-shadow:var(--shadow);
+  }
+  .faq-q{
+    font-weight:800;color:var(--gray-900);font-size:15px;margin-bottom:10px;
+    display:flex;gap:12px;
+  }
+  .faq-q::before{
+    content:"Q";color:var(--navy-800);font-weight:900;font-size:18px;
+  }
+  .faq-a{
+    color:var(--gray-700);font-size:14.5px;display:flex;gap:12px;
+  }
+  .faq-a::before{
+    content:"A";color:var(--gold-600);font-weight:900;font-size:18px;
+  }
+
+  /* Company table */
+  .company-table{
+    background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+    max-width:760px;margin:0 auto;
+  }
+  .company-table table{width:100%;border-collapse:collapse}
+  .company-table th, .company-table td{
+    padding:18px 22px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--gray-200);
+  }
+  .company-table th{background:var(--gray-100);color:var(--gray-900);font-weight:700;width:160px}
+  .company-table tr:last-child th, .company-table tr:last-child td{border-bottom:none}
+
+  /* CTA */
+  .cta-band{
+    background:
+      linear-gradient(135deg,rgba(19,40,79,.92),rgba(10,31,68,.88)),
+      url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1400&q=80') center/cover;
+    color:#fff;text-align:center;padding:88px 24px;
+    position:relative;
+  }
+  .cta-band::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold-500),transparent);
+  }
+  .cta-band h2{font-size:clamp(22px,3vw,30px);font-weight:900;margin-bottom:14px}
+  .cta-band p{opacity:.9;margin-bottom:28px;font-size:15px}
+  .cta-band .btn-primary{background:var(--gold-500);color:var(--navy-900)}
+  .cta-band .btn-primary:hover{background:var(--gold-400)}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .contact-info{
+    background:#fff;padding:32px;border-radius:var(--radius);box-shadow:var(--shadow);
+  }
+  .contact-info{text-align:center}
+  .contact-info h3{font-size:18px;font-weight:800;color:var(--navy-900);margin-bottom:18px}
+  .contact-info dl{display:block;font-size:14.5px}
+  .contact-info dt{color:var(--gray-500);font-weight:700;margin-top:14px}
+  .contact-info dt:first-child{margin-top:0}
+  .contact-info dd{color:var(--gray-900);margin-top:4px}
+  form.contact{
+    background:#fff;padding:32px;border-radius:var(--radius);box-shadow:var(--shadow);
+    display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;align-content:start;
+  }
+  form.contact label{
+    font-size:13px;font-weight:700;color:var(--gray-700);
+    display:flex;flex-direction:column;gap:6px;
+  }
+  form.contact label.full{grid-column:1 / -1}
+  form.contact input, form.contact select, form.contact textarea{
+    border:1.5px solid var(--gray-200);border-radius:8px;padding:12px 14px;
+    font-size:14.5px;font-family:inherit;background:#fff;color:var(--gray-900);width:100%;
+  }
+  form.contact input:focus, form.contact select:focus, form.contact textarea:focus{
+    outline:none;border-color:var(--navy-500);box-shadow:0 0 0 3px rgba(44,74,130,.15);
+  }
+  form.contact textarea{min-height:130px;resize:vertical}
+  form.contact button{
+    grid-column:1 / -1;
+    background:var(--navy-800);color:#fff;border:0;padding:14px;
+    border-radius:999px;font-weight:800;font-size:15px;cursor:pointer;margin-top:8px;
+  }
+  form.contact button:hover{background:var(--navy-900)}
+
+  /* Footer */
+  footer{background:var(--navy-900);color:#c8d0de;padding:56px 24px 28px}
+  .footer-inner{
+    max-width:1180px;margin:0 auto;
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;
+  }
+  footer h5{color:#fff;font-size:14px;font-weight:800;margin-bottom:14px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px}
+  footer a{color:#cdd5e0}
+  footer a:hover{color:#fff}
+  .copyright{
+    border-top:1px solid #1c3563;margin-top:40px;padding-top:20px;
+    text-align:center;font-size:12.5px;color:#7a8696;
+  }
+
+  /* PC専用の改行（スマホでは無効化して自然に折り返す） */
+  .br-pc{display:inline}
+
+  /* Responsive */
+  @media (max-width:960px){
+    .br-pc{display:none}
+    .hero-inner{grid-template-columns:1fr;padding:64px 24px}
+    .hero-visual{height:300px;order:-1}
+    .phil-grid, .works-grid, .str-grid, .recruit-grid, .contact-grid, .footer-inner, .voices-grid{
+      grid-template-columns:1fr;
+    }
+    form.contact{grid-template-columns:1fr}
+    form.contact label.full{grid-column:auto}
+    .staff-grid{grid-template-columns:repeat(2,1fr)}
+    .president-inner{grid-template-columns:1fr;gap:32px;padding:32px}
+    .president-photo{max-width:280px;margin:0 auto;aspect-ratio:1/1}
+    .nav-links{display:none}
+    .hamburger{display:block}
+    .nav-links.open{
+      display:flex;flex-direction:column;position:absolute;
+      top:64px;left:0;right:0;background:#fff;padding:20px;gap:18px;
+      border-bottom:1px solid var(--gray-200);
+    }
+    section{padding:72px 20px}
+    .recruit-message{padding:32px 24px}
+    .recruit-message h3{font-size:20px}
+    .conditions th{width:130px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">
+      <span class="logo-text"><em>サンプル建設</em>株式会社</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#philosophy">想い</a>
+      <a href="#president">代表挨拶</a>
+      <a href="#works">対応可能工事</a>
+      <a href="#achievements">施工実績</a>
+      <a href="#voices">お客様の声</a>
+      <a href="#staff">社員紹介</a>
+      <a href="#recruit">採用情報</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top" style="padding:0">
+  <div class="hero-inner">
+    <div>
+      <h1>人々の生活を豊かに。<br><span class="accent">住みやすい街</span>を、<br>私たちの手で。</h1>
+      <p class="lead">
+        スポーツ施設から住宅、道路、介護施設まで。<br class="br-pc">
+        サンプル建設株式会社 は生活に密着した建設で、<br class="br-pc">
+        地域の一番のサポーターであり続けます。
+      </p>
+    </div>
+    <div class="hero-visual">
+      <img src="./photos/hero-bg.png" class="hero-img" alt="チーム写真" />
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- skyline / buildings -->
+        <rect x="40" y="180" width="60" height="180" fill="url(#g1)"/>
+        <rect x="110" y="140" width="50" height="220" fill="url(#g1)"/>
+        <rect x="170" y="100" width="70" height="260" fill="url(#g1)"/>
+        <rect x="250" y="160" width="50" height="200" fill="url(#g1)"/>
+        <rect x="310" y="200" width="50" height="160" fill="url(#g1)"/>
+        <!-- road -->
+        <path d="M0 340 L400 340 L400 400 L0 400 Z" fill="rgba(255,255,255,.18)"/>
+        <line x1="20" y1="370" x2="80" y2="370" stroke="#fff" stroke-width="4" stroke-dasharray="14 12" opacity=".7"/>
+        <line x1="120" y1="370" x2="180" y2="370" stroke="#fff" stroke-width="4" stroke-dasharray="14 12" opacity=".7"/>
+        <line x1="220" y1="370" x2="280" y2="370" stroke="#fff" stroke-width="4" stroke-dasharray="14 12" opacity=".7"/>
+        <line x1="320" y1="370" x2="380" y2="370" stroke="#fff" stroke-width="4" stroke-dasharray="14 12" opacity=".7"/>
+        <!-- sun -->
+        <circle cx="320" cy="80" r="40" fill="#fff" opacity=".25"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ターゲット分岐 -->
+<section id="target" style="padding:48px 24px;background:var(--navy-900);">
+  <div class="container">
+<div class="target-split">
+      <div class="target-card target-client">
+        <div class="target-label">FOR CLIENTS</div>
+        <h3>工事のご相談</h3>
+        <p>施工能力・許可・実績・対応規模など、<br class="br-pc">発注・元請けに必要な情報をまとめています。</p>
+        <div class="target-links">
+          <a href="#works">対応可能工事を見る →</a>
+          <a href="#achievements">施工実績を見る →</a>
+          <a href="#company">会社概要・許可番号 →</a>
+          <a href="#contact" class="target-cta-btn">工事の相談をする</a>
+        </div>
+      </div>
+      <div class="target-divider"><span>or</span></div>
+      <div class="target-card target-recruit">
+        <div class="target-label">FOR JOB SEEKERS</div>
+        <h3>採用情報</h3>
+        <p>給与・休日・職場の雰囲気など、<br class="br-pc">応募前に知りたいことをまとめています。</p>
+        <div class="target-links">
+          <a href="#staff">社員の声を見る →</a>
+          <a href="#recruit">給与・待遇を見る →</a>
+          <a href="#recruit">採用FAQ →</a>
+          <a href="#contact" class="target-cta-btn target-cta-gold">まず話を聞いてみる</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy -->
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Our Philosophy</span>
+      <h2>私たちの想い</h2>
+      <p>サンプル建設株式会社 は、建物や道路をつくる会社ではありません。<br class="br-pc">「人々の生活そのもの」を支える、街の一番のサポーターです。</p>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>生活に密着した建設</h3>
+        <p>住宅・道路・医療・福祉。私たちが手がける現場は、すべて誰かの日常とつながっています。</p>
+      </div>
+      <div class="phil-card">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        </div>
+        <h3>住みやすい街づくり</h3>
+        <p>豊かな暮らしと、安心できる地域社会を。次の世代に手渡したい街を、共につくります。</p>
+      </div>
+      <div class="phil-card">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>地域の一番のサポーター</h3>
+        <p>困ったときに最初に頼られる存在へ。誠実な施工と、長く続く信頼関係を大切にします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- President Message -->
+<section class="president" id="president">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">President Message</span>
+      <h2>代表挨拶</h2>
+      <p>建設という仕事を通じて、私たちが大切にしてきたことをお伝えします。</p>
+    </div>
+    <div class="president-inner">
+      <div class="president-photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+        <span>※ 代表者写真を<br>ここに配置</span>
+      </div>
+      <div class="president-body">
+        <p class="quote">「自分が関わった建物の前を通るたびに、<br class="br-pc">誇らしい気持ちになる仕事を。」</p>
+        <p>サンプル建設株式会社のホームページをご覧いただき、ありがとうございます。</p>
+        <p>当社は○○県○○市の地で創業50年、地域の皆様に支えていただきながら、現在20名の社員と共に歩んでまいりました。私たちが建設業を続けてきた理由は、シンプルです。自分たちが手がけた道路、建物、住宅が、誰かの毎日の生活を支えている──その実感が、何よりの誇りだからです。</p>
+        <p>「きつい・汚い・危険」と言われてきた業界ですが、私たちはそのイメージを変えるべく、安全と働きやすさを最優先に、若い世代が誇りを持って働ける現場づくりに取り組んでいます。</p>
+        <p>これからも地域の一番のサポーターとして、人々の暮らしを足元から支え続けてまいります。どうぞよろしくお願いいたします。</p>
+        <div class="president-signature">
+          代表取締役<strong>見本　太郎</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Works -->
+<section id="works">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Our Services</span>
+      <h2>対応可能な工事</h2>
+      <p>公共・民間問わず、創業50年で培った幅広い対応力。<br class="br-pc">下記のような工事を一貫してお引き受けします。</p>
+    </div>
+    <div class="works-grid">
+      <div class="work-card">
+        <div class="work-thumb w1">
+          <span>スポーツ施設</span>
+        </div>
+        <div class="work-body">
+          <span class="work-tag">SPORTS FACILITY</span>
+          <h4>スポーツ施設の建設・改修</h4>
+          <p>体育館・スポーツセンターなどの新築から、耐震補強・内装リニューアルまで。地域の交流拠点づくりをご相談ください。</p>
+          <div class="work-meta"><span>新築／改修</span><span>公共・民間対応</span></div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb w2">
+          <span>工場</span>
+        </div>
+        <div class="work-body">
+          <span class="work-tag">FACTORY</span>
+          <h4>工場・倉庫の建築</h4>
+          <p>大スパン鉄骨造による工場・倉庫の新築・増築。操業中の工程管理にも配慮した計画立案でサポートします。</p>
+          <div class="work-meta"><span>新築／増築</span><span>大スパン対応</span></div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb w3">
+          <span>道路工事</span>
+        </div>
+        <div class="work-body">
+          <span class="work-tag">ROAD</span>
+          <h4>道路工事・舗装</h4>
+          <p>路盤高の調整から表層舗装まで一貫対応。当地域の気候を踏まえ、冬季凍結や通行への影響を最小化する工程で施工します。</p>
+          <div class="work-meta"><span>公共工事対応</span><span>路盤工〜表層</span></div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb w4">
+          <span>介護施設・クリニック</span>
+        </div>
+        <div class="work-body">
+          <span class="work-tag">MEDICAL / CARE</span>
+          <h4>介護施設・クリニックの建築</h4>
+          <p>利用者・スタッフ双方の動線設計、バリアフリー、医療連携への配慮など、機能性と温もりを両立した施設づくり。</p>
+          <div class="work-meta"><span>新築／改修</span><span>バリアフリー</span></div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb w5">
+          <span>住宅・新築・リフォーム</span>
+        </div>
+        <div class="work-body">
+          <span class="work-tag">HOUSING</span>
+          <h4>住宅 新築・リフォーム</h4>
+          <p>当地域の気候を踏まえた高断熱・高気密の注文住宅から、住み慣れた家のリフォームまで。お住まいに関するご相談を承ります。</p>
+          <div class="work-meta"><span>新築／リフォーム</span><span>宅地建物取引業</span></div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb w6">
+          <span>その他・元請け工事</span>
+        </div>
+        <div class="work-body">
+          <span class="work-tag">PUBLIC</span>
+          <h4>公共施設・元請け工事</h4>
+          <p>市民利用を止めない夜間・休日施工の組み合わせなど、地域インフラの安全性を高める元請け工事を一括でお引き受けします。</p>
+          <div class="work-meta"><span>元請け対応</span><span>耐震・改修</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements -->
+<section id="achievements" style="background:var(--gray-100)">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Our Achievements</span>
+      <h2>施工実績</h2>
+      <p>創業50年で積み重ねてきた、地域に残る仕事の数々。</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="公共施設新築工事" />
+        <div class="gallery-overlay">
+          <span class="gallery-tag">PUBLIC WORKS</span>
+          <div class="gallery-title">公共施設 新築工事</div>
+          <div class="gallery-meta">○○市 ／ 2023年竣工</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=600&q=80" alt="スポーツセンター新築工事" />
+        <div class="gallery-overlay">
+          <span class="gallery-tag">SPORTS FACILITY</span>
+          <div class="gallery-title">スポーツセンター 新築工事</div>
+          <div class="gallery-meta">△△市 ／ 2022年竣工</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="./photos/work-factory.png" alt="工場新築工事" />
+        <div class="gallery-overlay">
+          <span class="gallery-tag">FACTORY</span>
+          <div class="gallery-title">第2工場 新築工事</div>
+          <div class="gallery-meta">△△市 ／ 2022年竣工</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=600&q=80" alt="商業施設建設工事" />
+        <div class="gallery-overlay">
+          <span class="gallery-tag">COMMERCIAL</span>
+          <div class="gallery-title">商業施設 建設工事</div>
+          <div class="gallery-meta">○○市 ／ 2021年竣工</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="注文住宅新築工事" />
+        <div class="gallery-overlay">
+          <span class="gallery-tag">HOUSING</span>
+          <div class="gallery-title">注文住宅 新築工事</div>
+          <div class="gallery-meta">○○市 ／ 2024年竣工</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1524230572899-a752b3835840?auto=format&fit=crop&w=600&q=80" alt="公民館改修工事" />
+        <div class="gallery-overlay">
+          <span class="gallery-tag">PUBLIC</span>
+          <div class="gallery-title">公民館 改修工事</div>
+          <div class="gallery-meta">□□村 ／ 2023年竣工</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Voices -->
+<section class="voices" id="voices">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Customer Voices</span>
+      <h2>お客様の声</h2>
+      <p>これまで関わらせていただいた施主様・発注者様から<br class="br-pc">いただいた声をご紹介します。</p>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card">
+        <p class="voice-quote">
+          打ち合わせから引き渡しまで、本当に丁寧に対応してくれました。職人さんの仕事も細部まで美しく、毎日家に帰るのが楽しみです。
+        </p>
+        <div class="voice-meta">
+          <div class="voice-avatar">A</div>
+          <div>
+            <div class="voice-name">田中 美穂 様</div>
+            <div class="voice-role">新築住宅・○○市</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <p class="voice-quote">
+          工期も予算もきっちり守ってくれて、何より現場が綺麗。次の物件もお願いしたいと思える数少ない会社です。
+        </p>
+        <div class="voice-meta">
+          <div class="voice-avatar">B</div>
+          <div>
+            <div class="voice-name">株式会社 丸山建設 工事部長 山田 様</div>
+            <div class="voice-role">元請け工事ご担当者</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <p class="voice-quote">
+          地元のことをよく分かってくれていて、近隣への配慮も完璧。困った時に最初に相談したい会社です。
+        </p>
+        <div class="voice-meta">
+          <div class="voice-avatar">C</div>
+          <div>
+            <div class="voice-name">鈴木 一郎 様</div>
+            <div class="voice-role">リフォーム・◇◇市</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths (3K払拭メッセージ) -->
+<section class="strengths" id="strengths">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Our Strengths</span>
+      <h2>これからの建設業へ</h2>
+      <p>「きつい・汚い・危険」と言われてきた建設業界。<br class="br-pc">サンプル建設株式会社 は、その常識を変えるための取り組みを続けています。</p>
+    </div>
+    <div class="str-grid">
+      <div class="str-card">
+        <span class="label">SAFETY</span>
+        <h3>安全第一の現場づくり</h3>
+        <p>最新の安全設備と、毎朝のKY活動。事故ゼロを目指す体制で、家族が安心して送り出せる職場を実現します。</p>
+      </div>
+      <div class="str-card">
+        <span class="label">CLEAN</span>
+        <h3>整理整頓された清潔な現場</h3>
+        <p>5S（整理・整頓・清掃・清潔・しつけ）を徹底。プロの仕事が生まれる、気持ちの良い現場づくり。</p>
+      </div>
+      <div class="str-card">
+        <span class="label">FUTURE</span>
+        <h3>働きやすさを進化させる</h3>
+        <p>週休制度の整備、ICT施工の導入、若手を育てる教育体制。次世代に選ばれる建設会社を目指します。</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Staff -->
+<section class="staff" id="staff">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Our People</span>
+      <h2>社員紹介</h2>
+      <p>現場を支えているのは、一人ひとりの職人と社員です。<br class="br-pc">当社で働く仲間たちをご紹介します。</p>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-photo sp1 has-photo">
+          <div class="role-tag">施工管理</div>
+        </div>
+        <div class="staff-body">
+          <div class="staff-name">中村 彩香</div>
+          <div class="staff-years">入社3年目／△△市出身</div>
+          <p class="staff-quote">「自分が現場を任されて完成したときの達成感は、何物にも代えがたいです。先輩の支えが本当に心強い職場です。」</p>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo sp2 has-photo">
+          <div class="role-tag">職人（土木）</div>
+        </div>
+        <div class="staff-body">
+          <div class="staff-name">山田 健太</div>
+          <div class="staff-years">入社5年目／○○市出身</div>
+          <p class="staff-quote">「未経験で入りましたが、先輩が一から教えてくれました。今では資格も取れて、後輩を指導する立場になっています。」</p>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo sp3 has-photo">
+          <div class="role-tag">重機オペレーター</div>
+        </div>
+        <div class="staff-body">
+          <div class="staff-name">佐藤 裕樹</div>
+          <div class="staff-years">入社8年目／☆☆町出身</div>
+          <p class="staff-quote">「機械化が進んで、体力勝負だけの仕事じゃなくなりました。技術を磨くことが評価される、やりがいのある現場です。」</p>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo sp4 has-photo">
+          <div class="role-tag">事務／総務</div>
+        </div>
+        <div class="staff-body">
+          <div class="staff-name">加藤 さやか</div>
+          <div class="staff-years">入社2年目／◇◇市出身</div>
+          <p class="staff-quote">「現場と本社をつなぐ仕事です。社員みんなが気持ちよく働けるよう、サポートするのが私の役割です。」</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recruit -->
+<section class="recruit" id="recruit">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Recruit</span>
+      <h2>採用情報</h2>
+      <p>街をつくる仕事は、人をつくる仕事でもあります。<br class="br-pc">未経験から始めて、一生モノの技術を手にしませんか。</p>
+    </div>
+
+    <div class="recruit-message">
+      <h3>「ありがとう」が、形になって残る仕事です。</h3>
+      <p>自分が関わった道路を、毎日たくさんの人が通る。<br class="br-pc">自分が建てた家で、家族が笑って暮らしている。</p>
+      <p>建設業のやりがいは、地図に、街に、人の生活に、確かに残ること。<br class="br-pc">サンプル建設株式会社 では、その誇りを大切に、未経験の方も先輩がしっかり育てます。</p>
+    </div>
+
+    <div class="recruit-grid">
+      <div class="recruit-block">
+        <h4>こんな方を求めています</h4>
+        <ul>
+          <li>体を動かして働くのが好きな方</li>
+          <li>ものづくりに興味がある方</li>
+          <li>地域の役に立つ仕事がしたい方</li>
+          <li>仲間と一緒に成長したい方</li>
+          <li>未経験・第二新卒・他業種からの転職も歓迎</li>
+        </ul>
+      </div>
+      <div class="recruit-block">
+        <h4>サンプル建設株式会社 で働く魅力</h4>
+        <ul>
+          <li>未経験でも先輩が一から指導</li>
+          <li>資格取得を会社が全力サポート（費用負担あり）</li>
+          <li>多様な現場で幅広いスキルが身につく</li>
+          <li>頑張りが評価に反映される明確な制度</li>
+          <li>長く働ける労働環境の整備を継続</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="conditions">
+      <table>
+        <tr><th>募集職種</th><td>施工管理／土木作業員／建築作業員／重機オペレーター</td></tr>
+        <tr><th>雇用形態</th><td>正社員（試用期間3ヶ月／待遇変更なし）</td></tr>
+        <tr><th>勤務地</th><td>本社および各施工現場</td></tr>
+        <tr><th>勤務時間</th><td>8:00〜17:00（休憩90分）</td></tr>
+        <tr><th>基本給</th><td><strong>月給 200,000円〜</strong>（経験・能力考慮）</td></tr>
+        <tr><th>給与</th><td>経験・スキルを考慮の上、当社規定により決定<br>※面接時に詳細をご説明します。未経験者も歓迎。</td></tr>
+        <tr><th>賞与</th><td>年2回（6月・12月）※業績に応じて支給</td></tr>
+        <tr><th>昇給</th><td>年1回（4月）／査定あり</td></tr>
+        <tr><th>休日・休暇</th><td>
+          <strong>年間休日 105日</strong>（目安）<br>
+          週休2日制（土・日）／祝日／夏季休暇／年末年始休暇／有給休暇（入社6ヶ月後より付与）／慶弔休暇
+        </td></tr>
+        <tr><th>待遇・福利厚生</th><td>各種社会保険完備／交通費全額支給／資格取得支援（費用会社負担）／作業着貸与／退職金制度／健康診断</td></tr>
+        <tr><th>応募方法</th><td>下記お問い合わせフォーム、またはお電話にてご連絡ください</td></tr>
+      </table>
+    </div>
+
+    <div class="section-head" style="margin-bottom:32px">
+      <span class="section-tag">FAQ</span>
+      <h2 style="font-size:24px">よくあるご質問</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">未経験ですが応募できますか？</div>
+        <div class="faq-a">はい、大歓迎です。先輩が現場で丁寧に指導しますので、ご安心ください。実際に未経験から活躍している社員が多数在籍しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">資格を持っていません。取得のサポートはありますか？</div>
+        <div class="faq-a">はい、資格取得の費用は会社が負担します。受験のための勉強時間も配慮し、長く活躍できるスキルアップを支援します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">体力に自信がないのですが大丈夫ですか？</div>
+        <div class="faq-a">機械化・ICT化が進んでおり、体力勝負だった時代とは現場が変わっています。重要なのは、まじめさと学ぶ姿勢です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">女性も活躍できますか？</div>
+        <div class="faq-a">もちろんです。施工管理・事務をはじめ、現場でも女性が活躍しています。設備面の整備も継続的に進めています。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>一緒に、街をつくる仲間を探しています。</h2>
+  <p>まずはお気軽にお問い合わせください。会社見学も歓迎です。</p>
+  <a href="#contact" class="btn btn-primary">お問い合わせ・応募する →</a>
+</section>
+
+<!-- Company -->
+<section id="company">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Company</span>
+      <h2>会社概要</h2>
+    </div>
+    <div class="company-table">
+      <table>
+        <tr><th>会社名</th><td>サンプル建設株式会社</td></tr>
+        <tr><th>代表者</th><td>代表取締役　見本　太郎</td></tr>
+        <tr><th>所在地</th><td>〒000-0000　○○県○○市○○町1-2-3</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0120000000" style="color:var(--navy-900);font-weight:700">0120-000-000</a>（フリーダイヤル）</td></tr>
+        <tr><th>創業</th><td>創業50年</td></tr>
+        <tr><th>従業員数</th><td>20名</td></tr>
+        <tr><th>事業内容</th><td>総合建設業／土木工事／建築工事／道路舗装／住宅新築・リフォーム</td></tr>
+        <tr><th>建設業許可</th><td>総合建設業　○○県知事登録（特-0）第0000号</td></tr>
+        <tr><th>宅地建物取引業</th><td>○○県知事(0)第0000号</td></tr>
+        <tr><th>建築士事務所</th><td>○○県知事(○○)第0000号</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background:var(--gray-100)">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Contact</span>
+      <h2>お問い合わせ</h2>
+      <p>工事のご相談・採用へのご応募、どちらもお気軽にお寄せください。</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>お電話でのお問い合わせ</h3>
+        <dl>
+          <dt>フリーダイヤル</dt><dd><a href="tel:0120000000" style="font-size:22px;font-weight:800;color:var(--navy-900)">0120-000-000</a></dd>
+          <dt>受付</dt><dd>平日 8:00〜17:00</dd>
+          <dt>住所</dt><dd>〒000-0000<br>○○県○○市○○町1-2-3</dd>
+          <dt>代表</dt><dd>代表取締役 見本 太郎</dd>
+        </dl>
+      </div>
+      <form class="contact" onsubmit="event.preventDefault(); alert('お問い合わせありがとうございます。\n（実際の送信機能はサーバ実装が必要です）');">
+        <label class="full">お名前
+          <input type="text" required placeholder="例：山田 太郎" />
+        </label>
+        <label class="full">メールアドレス
+          <input type="email" required placeholder="例：sample@example.com" />
+        </label>
+        <label class="full">お問い合わせ種別
+          <select>
+            <option>工事のご相談</option>
+            <option>採用への応募</option>
+            <option>その他</option>
+          </select>
+        </label>
+        <label class="full">お問い合わせ内容
+          <textarea placeholder="ご相談内容をご記入ください"></textarea>
+        </label>
+        <button type="submit">送信する</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand" style="margin-bottom:18px">
+        <span class="footer-brand-text"><em>サンプル建設</em>株式会社</span>
+      </div>
+      <p style="font-size:14px;line-height:1.8;margin-bottom:14px">
+        生活に密着した建設で、<br class="br-pc">
+        人々の暮らしを豊かに、住みやすい街づくりを。<br class="br-pc">
+        地域の一番のサポーターであり続けます。
+      </p>
+      <p style="font-size:13px;line-height:1.9;color:#aebac8">
+        〒000-0000<br>
+        ○○県○○市○○町1-2-3<br>
+        <a href="tel:0120000000" style="color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em">0120-000-000</a>
+      </p>
+    </div>
+    <div>
+      <h5>サイトメニュー</h5>
+      <ul>
+        <li><a href="#philosophy">私たちの想い</a></li>
+        <li><a href="#works">施工実績</a></li>
+        <li><a href="#strengths">私たちの強み</a></li>
+        <li><a href="#recruit">採用情報</a></li>
+        <li><a href="#company">会社概要</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>事業内容</h5>
+      <ul>
+        <li>土木工事・道路舗装</li>
+        <li>建築工事・公共施設</li>
+        <li>スポーツ施設・工場</li>
+        <li>介護施設・クリニック</li>
+        <li>住宅 新築・リフォーム</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    © サンプル建設株式会社 All Rights Reserved.（ポートフォリオ用サンプルサイト）
+  </div>
+</footer>
+
+<script>
+  // モバイルメニュー
+  const hb = document.getElementById('hamburger');
+  const nl = document.getElementById('navLinks');
+  hb.addEventListener('click', () => nl.classList.toggle('open'));
+  nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nl.classList.remove('open')));
+</script>
+
+</body>
+</html>
