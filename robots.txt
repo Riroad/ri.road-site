@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://riroad.github.io/ri.road-site/sitemap.xml

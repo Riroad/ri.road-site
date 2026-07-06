@@ -42,7 +42,7 @@
 
   /* Header */
   header{
-    position:sticky;top:0;z-index:50;
+    position:sticky;top:44px;z-index:50;
     background:rgba(255,255,255,.95);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--gray-200);
@@ -90,6 +90,32 @@
   .nav-cta:hover{background:var(--navy-900);text-decoration:none}
   .hamburger{display:none;background:none;border:0;cursor:pointer;padding:8px}
   .hamburger span{display:block;width:24px;height:2px;background:var(--gray-900);margin:5px 0;transition:.2s}
+
+  /* ri.road 制作事例 return bar */
+  .riroad-bar{
+    position:sticky;top:0;z-index:100;
+    height:44px;box-sizing:border-box;
+    background:var(--navy-900);color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:0 20px;
+  }
+  .riroad-bar .rb-label{
+    font-size:13px;font-weight:600;opacity:.92;
+    display:flex;align-items:center;gap:8px;overflow:hidden;
+    white-space:nowrap;text-overflow:ellipsis;
+  }
+  .riroad-bar .rb-label b{color:var(--gold-500);font-weight:700}
+  .riroad-bar .rb-back{
+    display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
+    background:#fff;color:var(--navy-900);
+    padding:8px 16px;border-radius:999px;
+    font-size:13px;font-weight:700;line-height:1;
+  }
+  .riroad-bar .rb-back:hover{background:var(--gold-500);color:var(--navy-900);text-decoration:none}
+  @media(max-width:600px){
+    .riroad-bar .rb-label span{display:none}
+    .riroad-bar{justify-content:space-between}
+  }
 
   /* Hero */
   .hero{
@@ -383,7 +409,7 @@
     text-shadow:0 2px 12px rgba(0,0,0,.5);font-size:17px;
   }
   .w1{background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80')}
-  .w2{background-image:url('./photos/work-factory.png')}
+  .w2{background-image:url('./photos/work-factory.jpg')}
   .w3{background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80')}
   .w4{background-image:url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80')}
   .w5{background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80')}
@@ -590,6 +616,11 @@
 </head>
 <body>
 
+<div class="riroad-bar">
+  <span class="rb-label"><b>Ri.road</b><span>制作事例（サンプルサイト）</span></span>
+  <a class="rb-back" href="../../index.html#top">← Ri.road のTOPへ戻る</a>
+</div>
+
 <header>
   <div class="nav">
     <a href="#top" class="logo">
@@ -624,7 +655,7 @@
       </p>
     </div>
     <div class="hero-visual">
-      <img src="./photos/hero-bg.png" class="hero-img" alt="チーム写真" />
+      <img src="./photos/hero-bg.jpg" class="hero-img" alt="チーム写真" />
       <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -848,7 +879,7 @@
         </div>
       </div>
       <div class="gallery-item">
-        <img src="./photos/work-factory.png" alt="工場新築工事" />
+        <img src="./photos/work-factory.jpg" alt="工場新築工事" />
         <div class="gallery-overlay">
           <span class="gallery-tag">FACTORY</span>
           <div class="gallery-title">第2工場 新築工事</div>
