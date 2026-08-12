@@ -40,13 +40,46 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://riroad.com/#business",
   "name": "Ri.road",
-  "alternateName": "リロード",
-  "description": "長野県駒ヶ根市を拠点に長野県全域に対応するWebデザイン×AIスタジオ。ホームページ制作・LP制作・AIチャットボット導入・業務自動化・DX支援。",
+  "alternateName": ["リロード", "Ri.road（リロード）"],
+  "description": "長野県駒ヶ根市を拠点に、上伊那・南信州エリアに対応するWebデザイン×AIスタジオ。ホームページ制作・LP制作・AIチャットボット導入・業務自動化・DX支援。",
   "url": "https://riroad.com/",
   "image": "https://riroad.com/hero-logo.png",
-  "areaServed": "長野県",
-  "serviceType": ["Webデザイン", "ホームページ制作", "AI活用支援"]
+  "logo": "https://riroad.com/nav-logo.png",
+  "priceRange": "¥¥",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "JP",
+    "addressRegion": "長野県",
+    "addressLocality": "駒ヶ根市"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.7278,
+    "longitude": 137.9336
+  },
+  "areaServed": [
+    { "@type": "City", "name": "駒ヶ根市" },
+    { "@type": "City", "name": "伊那市" },
+    { "@type": "City", "name": "飯田市" },
+    { "@type": "AdministrativeArea", "name": "宮田村" },
+    { "@type": "AdministrativeArea", "name": "飯島町" },
+    { "@type": "AdministrativeArea", "name": "中川村" },
+    { "@type": "AdministrativeArea", "name": "南箕輪村" },
+    { "@type": "AdministrativeArea", "name": "長野県" }
+  ],
+  "knowsAbout": ["ホームページ制作", "Webデザイン", "LP制作", "AI業務改善", "DX支援", "AIチャットボット"],
+  "serviceType": ["Webデザイン", "ホームページ制作", "LP制作", "AI活用支援", "業務自動化・DX支援"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Ri.road のサービス",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ホームページ制作", "description": "駒ヶ根市の中小企業・個人事業主向けのコーポレートサイト・店舗サイト制作。" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LP（ランディングページ）制作", "description": "集客・問い合わせにつなげる1ページ完結型サイトの制作。" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI業務改善・DX支援", "description": "生成AIの導入相談、AIチャットボット構築、日々の業務の自動化・効率化支援。" } }
+    ]
+  }
 }
 </script>
 <!-- ===== /SEO ===== -->
@@ -150,6 +183,10 @@
     color:#fbf8f1;
   }
   .hero h1 .x{color:var(--gold);font-style:italic;padding:0 .12em;}
+  .hero h1 .h1-sub{
+    display:block;margin-top:18px;font-size:clamp(13px,1.6vw,16px);font-weight:400;
+    letter-spacing:.18em;line-height:1.9;color:var(--sub);font-family:inherit;
+  }
   .hero .lead{
     margin-top:30px;font-size:clamp(15px,2vw,18px);color:var(--ink);
     letter-spacing:.04em;line-height:2;
@@ -376,6 +413,7 @@
   <a href="#services">Service</a>
   <a href="#work">Work</a>
   <a href="#flow">How we work</a>
+  <a href="#area">Area</a>
   <a href="#contact">Contact</a>
 </nav>
 <div class="menu-overlay" id="moverlay"></div>
@@ -394,7 +432,9 @@
   </svg>
 
   <div class="eyebrow">Web Design &nbsp;&amp;&nbsp; AI Studio</div>
-  <h1 class="serif">Web Design<span class="x">×</span>AI</h1>
+  <h1 class="serif">Web Design<span class="x">×</span>AI
+    <span class="h1-sub">長野県駒ヶ根市のホームページ制作・Webデザイン・AI業務改善</span>
+  </h1>
   <p class="lead">止まる時も、進む時も、ともに。<br>
     駒ヶ根市のWebデザインと AI で、<br>あなたのビジネスの<span class="accent">次の一歩</span>を形にする。</p>
   <div class="place">長野県駒ヶ根市から、その道を、ともに。</div>
@@ -531,7 +571,7 @@
     <div class="reveal">
       <div class="sec-eyebrow">How we work</div>
       <h2 class="sec-title serif">進め方</h2>
-      <p class=”sec-desc”>まずは、あなたの”今いる場所”を<br>聞かせてください。<br>小さな相談からで大丈夫です。</p>
+      <p class="sec-desc">まずは、あなたの「今いる場所」を<br>聞かせてください。<br>小さな相談からで大丈夫です。</p>
     </div>
     <div class="steps">
       <div class="step reveal">
@@ -552,6 +592,44 @@
         <p>かたちにして、公開して終わりにしません。<br>動き出したその先まで、隣で支えます。</p>
         <div class="st-rule"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AREA ===== -->
+<section class="area" id="area">
+  <style>
+    .area{padding:96px 0;}
+    .area .area-lead{color:var(--sub);max-width:760px;font-size:16px;line-height:2;margin-top:18px;}
+    .area .area-list{
+      display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;list-style:none;padding:0;
+    }
+    .area .area-list li{
+      border:1px solid var(--line);border-radius:999px;padding:9px 18px;
+      font-size:14px;letter-spacing:.08em;color:var(--ink);background:var(--card);
+    }
+    .area .area-list li.main{border-color:var(--gold);color:var(--gold-soft);}
+    .area .area-note{color:var(--sub);font-size:13.5px;line-height:2;margin-top:28px;max-width:760px;}
+    @media(max-width:640px){ .area{padding:72px 0;} }
+  </style>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Area</div>
+      <h2 class="sec-title serif">対応エリア</h2>
+      <p class="area-lead">長野県駒ヶ根市を拠点に、上伊那・南信州エリアのホームページ制作とAI業務改善に対応しています。近隣エリアであれば直接お会いしてのご相談も可能です。</p>
+      <ul class="area-list">
+        <li class="main">駒ヶ根市</li>
+        <li>伊那市</li>
+        <li>宮田村</li>
+        <li>飯島町</li>
+        <li>中川村</li>
+        <li>南箕輪村</li>
+        <li>箕輪町</li>
+        <li>飯田市</li>
+        <li>松川町</li>
+        <li>長野県全域</li>
+      </ul>
+      <p class="area-note">上記以外の地域や県外の方も、オンライン（ビデオ通話・メール）でのお打ち合わせで対応いたします。まずはお気軽にご相談ください。</p>
     </div>
   </div>
 </section>
@@ -637,6 +715,7 @@
         <a href="#services">Service</a>
         <a href="#work">Work</a>
         <a href="#flow">How we work</a>
+        <a href="#area">Area</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="col">
