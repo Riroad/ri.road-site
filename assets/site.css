@@ -1,0 +1,300 @@
+@charset "UTF-8";
+/* ===========================================================
+   Ri.road 下層ページ共通スタイル
+   index.html のデザイン（黒＋ゴールド＋明朝）に合わせています。
+   使用ページ: /homepage-seisaku/ , /ai/
+   =========================================================== */
+
+:root{
+  --bg:#0c0e12;
+  --bg2:#11141a;
+  --card:#13161d;
+  --ink:#f2efe8;
+  --body:#d6d3cc;
+  --sub:#9aa0ab;
+  --line:#2a2e37;
+  --gold:#c9a24a;
+  --gold-soft:#d8b96f;
+  --maxw:1000px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;height:auto;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+.gold{color:var(--gold);}
+.nobr{white-space:nowrap;}
+
+/* ---------- Header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 28px;
+  background:rgba(12,14,18,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.brand .mark{width:58px;height:58px;}
+.brand .name{font-size:29px;font-weight:600;letter-spacing:.02em;}
+.brand .name b{color:var(--gold);font-weight:600;}
+.hnav{display:flex;align-items:center;gap:26px;}
+.hnav a{font-size:13px;letter-spacing:.1em;color:var(--sub);transition:.2s;}
+.hnav a:hover{color:var(--ink);}
+.hnav a.current{color:var(--gold);}
+.hnav a.hcta{
+  border:1px solid var(--gold);color:var(--gold);
+  border-radius:3px;padding:9px 20px;letter-spacing:.14em;
+}
+.hnav a.hcta:hover{background:var(--gold);color:#0c0e12;}
+
+/* ---------- パンくず ---------- */
+.crumb{padding-top:132px;}
+.crumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--sub);letter-spacing:.05em;}
+.crumb li+li::before{content:"›";margin-right:8px;color:var(--line);}
+.crumb a{color:var(--sub);border-bottom:1px solid transparent;}
+.crumb a:hover{color:var(--ink);border-bottom-color:var(--line);}
+
+/* ---------- Hero ---------- */
+.phero{padding:34px 0 74px;border-bottom:1px solid var(--line);}
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-size:11px;letter-spacing:.28em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:20px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);}
+h1{font-size:42px;font-weight:600;letter-spacing:.04em;line-height:1.5;margin-bottom:26px;}
+/* サービス名が「ホームページ制／作」のように途中で折れないようにする */
+h1 .gold{white-space:nowrap;}
+h1 .h1-sub{display:block;font-size:.42em;color:var(--sub);letter-spacing:.1em;margin-top:16px;line-height:1.8;}
+.lead{color:var(--body);font-size:16px;max-width:760px;}
+.lead+.lead{margin-top:16px;}
+
+/* ---------- セクション ---------- */
+.sec{padding:78px 0;border-bottom:1px solid var(--line);scroll-margin-top:96px;}
+.sec:nth-of-type(even){background:var(--bg2);}
+.sec-eyebrow{
+  font-size:11px;letter-spacing:.26em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:14px;
+}
+.sec h2{font-size:29px;font-weight:600;letter-spacing:.04em;line-height:1.55;margin-bottom:18px;}
+.sec h3{font-size:19px;font-weight:600;letter-spacing:.03em;margin:44px 0 16px;}
+.sec-desc{color:var(--sub);font-size:15px;margin-bottom:42px;max-width:760px;}
+.sec p{color:var(--body);font-size:15px;}
+.sec p+p{margin-top:14px;}
+
+/* ---------- 箇条書き ---------- */
+.dots{list-style:none;}
+.dots li{
+  font-size:15px;color:var(--body);
+  padding-left:22px;position:relative;margin-bottom:10px;
+}
+.dots li::before{
+  content:"";position:absolute;left:4px;top:.85em;
+  width:5px;height:5px;border-radius:50%;background:var(--gold);
+}
+.dots li b{color:var(--ink);font-weight:600;}
+
+/* ---------- 対象者カード ---------- */
+.target{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+.target li{
+  list-style:none;background:var(--card);border:1px solid var(--line);border-radius:4px;
+  padding:24px 26px;font-size:15px;color:var(--body);line-height:1.85;
+}
+.target li b{display:block;color:var(--ink);font-size:16px;margin-bottom:8px;letter-spacing:.02em;}
+
+/* ---------- 料金プラン ---------- */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:20px;align-items:stretch;}
+.plan{
+  background:var(--card);border:1px solid var(--line);border-radius:4px;
+  padding:30px 26px 28px;display:flex;flex-direction:column;
+}
+.plan.pick{border-color:var(--gold);}
+.plan .tag{
+  display:inline-block;align-self:flex-start;
+  font-size:10.5px;letter-spacing:.18em;color:var(--gold);
+  border:1px solid var(--gold);border-radius:2px;padding:3px 9px;margin-bottom:14px;
+}
+.plan h4{font-size:19px;font-weight:600;letter-spacing:.03em;margin-bottom:6px;}
+.plan .price{
+  font-size:31px;color:var(--gold);letter-spacing:.02em;line-height:1.4;margin:12px 0 2px;
+}
+.plan .price small{font-size:14px;color:var(--sub);letter-spacing:.06em;margin-left:4px;}
+.plan .term{font-size:12.5px;color:var(--sub);letter-spacing:.06em;margin-bottom:18px;}
+.plan .desc{font-size:14.5px;color:var(--body);margin-bottom:18px;}
+.plan .deli{
+  margin-top:auto;padding-top:16px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--sub);line-height:1.85;
+}
+.plan .deli b{display:block;color:var(--gold);font-size:10.5px;letter-spacing:.18em;margin-bottom:7px;}
+
+/* ---------- 実績作り価格 ---------- */
+.offer{
+  margin-top:34px;background:rgba(201,162,74,.06);
+  border:1px solid rgba(201,162,74,.42);border-radius:4px;padding:30px 30px 26px;
+}
+.offer h3{margin:0 0 8px;font-size:19px;color:var(--gold);letter-spacing:.03em;}
+.offer .limit{font-size:13px;color:var(--gold-soft);letter-spacing:.08em;margin-bottom:20px;}
+.offer table{width:100%;border-collapse:collapse;font-size:15px;}
+.offer th,.offer td{padding:12px 10px;text-align:left;border-bottom:1px solid rgba(201,162,74,.2);}
+.offer th{font-size:11px;letter-spacing:.16em;color:var(--sub);font-weight:400;text-transform:uppercase;}
+.offer td:first-child{color:var(--ink);}
+.offer .now{color:var(--gold);font-size:18px;}
+.offer .was{color:var(--sub);text-decoration:line-through;}
+.offer .cond{font-size:13px;color:var(--sub);margin-top:18px;line-height:1.85;}
+
+/* ---------- 表（保守プランなど） ---------- */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.tablewrap table{width:100%;min-width:600px;border-collapse:collapse;font-size:14.5px;}
+.tablewrap th,.tablewrap td{padding:14px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+.tablewrap thead th{font-size:11px;letter-spacing:.16em;color:var(--gold);font-weight:400;text-transform:uppercase;}
+.tablewrap tbody th{color:var(--ink);font-weight:600;font-size:15px;white-space:nowrap;}
+.tablewrap td{color:var(--body);}
+.tablewrap .amt{color:var(--gold);font-size:17px;white-space:nowrap;}
+.tablewrap .amt s{display:block;color:var(--sub);font-size:12.5px;}
+
+/* ---------- 流れ ---------- */
+.flow{list-style:none;counter-reset:step;}
+.flow li{
+  counter-increment:step;position:relative;
+  padding:0 0 34px 62px;border-left:1px solid var(--line);margin-left:17px;
+}
+.flow li:last-child{border-left-color:transparent;padding-bottom:0;}
+.flow li::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;left:-17px;top:0;
+  width:34px;height:34px;border-radius:50%;
+  background:var(--bg);border:1px solid var(--gold);color:var(--gold);
+  font-size:12px;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;
+}
+.flow h4{font-size:17px;font-weight:600;letter-spacing:.03em;margin-bottom:6px;line-height:1.6;}
+.flow h4 .when{font-size:11.5px;color:var(--gold);letter-spacing:.14em;margin-left:12px;white-space:nowrap;}
+.flow p{font-size:14.5px;color:var(--body);}
+
+/* ---------- FAQ ---------- */
+.faq{border-top:1px solid var(--line);}
+.faq details{border-bottom:1px solid var(--line);}
+.faq summary{
+  list-style:none;cursor:pointer;padding:22px 44px 22px 30px;position:relative;
+  font-size:16px;color:var(--ink);letter-spacing:.02em;line-height:1.7;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::before{content:"Q";position:absolute;left:0;top:22px;color:var(--gold);font-size:14px;letter-spacing:.1em;}
+.faq summary::after{
+  content:"";position:absolute;right:10px;top:32px;
+  width:9px;height:9px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);
+  transform:rotate(45deg);transition:.25s;
+}
+.faq details[open] summary::after{transform:rotate(-135deg);}
+.faq .a{padding:0 30px 26px;font-size:14.5px;color:var(--body);}
+.faq .a p+p{margin-top:12px;}
+
+/* ---------- 事例カード ---------- */
+.caselink{
+  display:block;background:var(--card);border:1px solid var(--line);border-radius:4px;
+  padding:28px 30px;transition:.25s;
+}
+.caselink:hover{border-color:var(--gold);}
+.caselink .k{font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:10px;}
+.caselink h4{font-size:19px;font-weight:600;letter-spacing:.03em;margin-bottom:8px;}
+.caselink p{font-size:14.5px;color:var(--body);}
+.caselink .go{display:inline-block;margin-top:14px;font-size:13px;color:var(--gold);letter-spacing:.08em;}
+
+/* ---------- CTA ---------- */
+.cta{padding:88px 0;text-align:center;border-bottom:1px solid var(--line);}
+.cta h2{font-size:29px;font-weight:600;letter-spacing:.05em;margin-bottom:18px;}
+.cta p{color:var(--sub);font-size:15px;max-width:640px;margin:0 auto 34px;}
+.btn{
+  display:inline-block;border:1px solid var(--gold);color:var(--gold);
+  border-radius:3px;padding:17px 46px;font-size:14px;letter-spacing:.16em;transition:.25s;
+}
+.btn:hover{background:var(--gold);color:#0c0e12;}
+.btn.ghost{border-color:var(--line);color:var(--sub);}
+.btn.ghost:hover{background:none;border-color:var(--gold);color:var(--gold);}
+.btnrow{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+
+/* ---------- 注記 ---------- */
+.note{
+  background:var(--card);border:1px solid var(--line);border-radius:4px;
+  padding:22px 26px;font-size:13.5px;color:var(--sub);line-height:1.9;margin-top:26px;
+}
+.note b{color:var(--ink);font-weight:600;}
+
+/* ---------- Footer ---------- */
+footer{padding:56px 0 26px;}
+.foot{display:flex;flex-wrap:wrap;gap:44px;justify-content:space-between;}
+.foot .name{font-size:26px;font-weight:600;letter-spacing:.02em;}
+.foot .name b{color:var(--gold);font-weight:600;}
+.foot .desc{font-size:11px;letter-spacing:.2em;color:var(--gold);margin:8px 0 16px;}
+.foot .addr{font-size:13px;color:var(--sub);line-height:2;}
+.foot .col{min-width:160px;}
+.foot h5{font-size:10.5px;letter-spacing:.2em;color:var(--gold);margin-bottom:16px;font-weight:400;}
+.foot .col a{display:block;font-size:13.5px;color:var(--sub);margin-bottom:11px;transition:.2s;}
+.foot .col a:hover{color:var(--ink);}
+.copy{text-align:center;color:var(--sub);font-size:12.5px;letter-spacing:.06em;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+
+/* ---------- Responsive ---------- */
+@media(max-width:860px){
+  header{padding:12px 18px;}
+  .brand .mark{width:50px;height:50px;}
+  .brand .name{font-size:25px;}
+  .hnav{gap:16px;}
+  .hnav a:not(.hcta){display:none;}
+  .crumb{padding-top:110px;}
+  h1{font-size:32px;}
+  .sec{padding:62px 0;}
+  .sec h2{font-size:24px;}
+  .offer{padding:24px 20px;}
+}
+@media(max-width:560px){
+  /* padding のショートハンドを使うと .crumb の padding-top を打ち消して
+     パンくずが固定ヘッダーの裏に隠れるため、左右だけを指定する */
+  .wrap{padding-left:18px;padding-right:18px;}
+  .brand .mark{width:46px;height:46px;}
+  .brand .name{font-size:22px;}
+  .hnav a.hcta{padding:8px 14px;font-size:12px;letter-spacing:.08em;}
+  h1{font-size:26px;}
+  h1 .h1-sub{font-size:.5em;}
+  .phero{padding:26px 0 54px;}
+  .sec h2{font-size:21px;}
+  .plan{padding:24px 20px;}
+  .plan .price{font-size:27px;}
+  .flow li{padding-left:46px;}
+  .cta{padding:66px 0;}
+  .offer table{font-size:13.5px;}
+  .offer th,.offer td{padding:10px 6px;}
+
+  /* ボタンは幅を揃えて縦積みにする（指で押しやすく、視線が縦一列で済む） */
+  .btnrow{flex-direction:column;gap:12px;}
+  .btn{display:block;width:100%;padding:16px 0;text-align:center;}
+
+  /* 表は横スクロールさせず、1行=1枚のカードに組み替える */
+  .tablewrap{overflow-x:visible;}
+  .tablewrap table{min-width:0;display:block;}
+  .tablewrap thead{display:none;}
+  .tablewrap tbody,.tablewrap tr,.tablewrap th,.tablewrap td{display:block;width:100%;}
+  .tablewrap tr{
+    background:var(--card);border:1px solid var(--line);border-radius:4px;
+    padding:22px 20px;margin-bottom:14px;
+  }
+  .tablewrap tbody th{
+    border:none;padding:0 0 14px;white-space:normal;
+    font-size:17px;line-height:1.6;
+  }
+  .tablewrap td{border:none;padding:0;}
+  .tablewrap .amt{font-size:21px;line-height:1.4;margin-bottom:16px;}
+  .tablewrap .amt::before{
+    content:"月額（税別）";display:block;
+    font-size:10.5px;letter-spacing:.16em;color:var(--sub);margin-bottom:2px;
+  }
+  .tablewrap .amt s{display:inline-block;margin-left:10px;}
+}
